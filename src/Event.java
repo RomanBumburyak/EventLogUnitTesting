@@ -1,22 +1,7 @@
-public class Main {
-    public static void main(String[] args) {
+public class Event {
 
-        System.out.println("Working on my EventLog Class C");
-
-
+    private String name;
+    private String action;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-    }
 }
