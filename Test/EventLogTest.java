@@ -17,14 +17,14 @@ public class EventLogTest {
 
     @Test
     public void addEvent() throws Exception {
-        Event eventEins = new Event();
-        Event eventZwei = new Event();
-        Event eventDrei = new Event();
-
-        EventLog eventLogEins = new EventLog;
+        Event eventEins = new Event("PhoneOpt", "PhoneCall");
+        Event eventZwei = new Event("Walk", "20k");
+        Event eventDrei = new Event("Jog", "15k");
+        
+        EventLog eventLogEins = new EventLog();
         assertEquals(eventLogEins.addEvent(eventEins), true);
         assertEquals(eventLogEins.addEvent(eventZwei), true);
-        assertEquals(eventLogEins.addEvent(eventDrei), false);
+        assertEquals(eventLogEins.addEvent(eventDrei), true);
 
     }
 
@@ -34,4 +34,9 @@ public class EventLogTest {
 
     }
 
+    @Test
+    public void truthTest() throws Exception {
+        Event eventVier = new Event("Video Chat", "Face2Face");
+
+    }
 }
