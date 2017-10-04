@@ -1,3 +1,5 @@
+import com.sun.tools.internal.ws.wsdl.document.jaxws.Exception;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,28 +30,20 @@ public class EventLog {
            throw new IllegalArgumentException(); /// throw the exception higher, in orger to throw you also need to catch.
        } else if (event.getAction() == null ) {
            throw new IllegalArgumentException();
-       } else if(event.getAction() != "Face2Face"){
+       } else if(event.getAction() != "Face2Face" && event.getAction() != "PhoneCall" && event.getAction() != "TextMessaging" && event.getAction() != "Unknown" ){
         throw new IllegalArgumentException();
         }
-        else if (event.getAction() != "PhoneCall") {
-           throw new IllegalArgumentException();
-       }
-       else if (event.getAction() != "TextMessaging"){
-           throw new IllegalArgumentException();
-       }
-       else if (event.getAction() != "Unknown"){
-           throw new IllegalArgumentException();
-       }
-
-       try {
-
-       }
-
-       catch ("ExceptionHere name") {
+//        else if (event.getAction() != "PhoneCall") {
+//           throw new IllegalArgumentException();
+//       }
+//       else if (event.getAction() != "TextMessaging"){
+//           throw new IllegalArgumentException();
+//       }
+//       else if (event.getAction() != "Unknown"){
+//           throw new IllegalArgumentException();
+//       }
 
 
-
-       }
 
        eventList.add(event);
         System.out.println("This is the next event " + event);            ///The return value from the addEvent method should be true.

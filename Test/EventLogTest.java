@@ -20,11 +20,36 @@ public class EventLogTest {
         Event eventEins = new Event("PhoneOpt", "PhoneCall");
         Event eventZwei = new Event("Walk", "20k");
         Event eventDrei = new Event("Jog", "15k");
+        Event eventVier = new Event(null, null);
         
         EventLog eventLogEins = new EventLog();
-        assertEquals(eventLogEins.addEvent(eventEins), true);
-        assertEquals(eventLogEins.addEvent(eventZwei), true);
-        assertEquals(eventLogEins.addEvent(eventDrei), true);
+        assertEquals(eventLogEins.addEvent(eventEins), true);   //I have my assert equals, so I don't need a try catch rn.
+//        assertEquals(eventLogEins.addEvent(eventZwei), true);
+//        assertEquals(eventLogEins.addEvent(eventDrei), true);
+
+        try {
+            eventLogEins.addEvent(eventVier);
+            fail("Should never reach this");
+
+        } catch (Exception ex) {
+            assertTrue(true);
+        }
+
+        try{
+            eventLogEins.addEvent(eventZwei);
+            fail("Should never reach this");
+        }
+        catch (Exception ex) {
+            assertTrue(true);
+        }
+
+        try {
+            eventLogEins.addEvent(eventDrei);
+            fail("Should Never Reach This");
+        } catch (Exception ex) {
+            assertTrue(true);
+        }
+
 
     }
 
